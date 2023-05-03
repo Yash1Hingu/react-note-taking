@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Notes from './components/Notes/Notes';
 import Header from './components/UI/Header'
+import NotesAbsolute from './components/Notes/NotesAbsolute';
+import { useState } from 'react';
 const DUMMAY_NOTES = [
   {
     id: 'n1',
@@ -20,10 +22,27 @@ const DUMMAY_NOTES = [
   }
 ]
 function App() {
+  const backHandler = () => {
+    setShow(
+      <div>
+        <Header />
+        <Notes notes={DUMMAY_NOTES} onShow={showHandler} />
+      </div>
+    )
+  }
+  const showHandler = (data) => {
+    setShow(<NotesAbsolute title={data.title} content={data.content} backPage={backHandler} />);
+  }
+
+  const [show, setShow] = useState(
+    <div>
+      <Header />
+      <Notes notes={DUMMAY_NOTES} onShow={showHandler} />
+    </div>
+  )
   return (
     <div className="container">
-      <Header />
-      <Notes notes={DUMMAY_NOTES} />
+      {show}
     </div>
   );
 }

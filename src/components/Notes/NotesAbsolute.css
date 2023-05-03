@@ -1,0 +1,17 @@
+.notes__absolute{
+    position: absolute;
+    overflow: hidden;
+    margin: 10px;
+    background-color: hsl(0, 0%, 75%);
+    padding: 20px;
+}
+.back__btn{
+    color: hsl(0, 100%, 50%);
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+.back__btn:hover{
+    color: hsl(0, 100%, 30%);
+    cursor: pointer;
+    text-decoration: underline;
+}
