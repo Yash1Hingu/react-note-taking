@@ -1,0 +1,7 @@
+.notes__header{
+    display: flex;
+    justify-content: center;
+    background-color: hsl(240, 100%, 64%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px;
+}
